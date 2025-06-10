@@ -1,40 +1,66 @@
 /*
 ========================================
-PORTFOLIO THEME V1.1 - "DAYLIGHT"
-Designer: Roy Natsir & The Mentor
+PORTFOLIO THEME V1.2 - "DAYLIGHT" (Mentor's Polish)
+Designer: Roy Natsir
+Revised by: The Mentor
+========================================
+
+TABLE OF CONTENTS
+-----------------
+1. CSS RESET & GLOBAL SETUP
+2. GOOGLE FONTS IMPORT (via HTML now)
+3. CSS VARIABLES (THEME)
+4. GENERAL TYPOGRAPHY
+5. LAYOUT & STRUCTURE
+6. COMPONENT STYLES
+7. UTILITIES
 ========================================
 */
 
-/* 1. ROOT VARIABLES & GENERAL SETUP 
-   Changing these variables will change the entire theme.
+/* 1. CSS RESET & GLOBAL SETUP
+   Ensures consistent styling across all browsers.
    ======================================== */
-:root {
-  --bg-color: #f8f9fa; /* A very light, almost white, grey background */
-  --surface-color: #ffffff; /* Pure white for cards and surfaces */
-  --primary-text-color: #212529; /* A strong, dark grey for primary text */
-  --secondary-text-color: #6c757d; /* A softer grey for secondary text */
-  --accent-color: #007bff; /* A classic, professional blue */
-  --accent-hover-color: #0056b3; /* A darker blue for hover effects */
-  --border-color: #dee2e6; /* A light, subtle border color */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Import the 'Inter' font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body {
   background-color: var(--bg-color);
   color: var(--primary-text-color);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.7;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased; /* Smoother fonts on Webkit browsers */
-  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
 }
 
-/* 2. TYPOGRAPHY
+/* 2. GOOGLE FONTS IMPORT
+   Now handled via <link> in HTML for better performance.
+   ======================================== */
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"); */
+
+/* 3. CSS VARIABLES (THEME)
+   The central control panel for the site's design.
+   ======================================== */
+:root {
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --primary-text-color: #212529;
+  --secondary-text-color: #6c757d;
+  --accent-color: #007bff;
+  --accent-hover-color: #0056b3;
+  --border-color: #dee2e6;
+}
+
+/* 4. GENERAL TYPOGRAPHY
    Clean, modern, and readable.
    ======================================== */
 h1,
@@ -43,20 +69,21 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-text-color);
   font-weight: 700;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: 3rem; /* 48px */
-  color: #000000; /* Pure black for the main name for emphasis */
+  color: #000000;
 }
 
 h2 {
   font-size: 2rem; /* 32px */
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-top: 3rem; /* Add space above section titles */
+  margin-bottom: 2rem;
 }
 
 p {
@@ -67,84 +94,99 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
   color: var(--accent-hover-color);
 }
 
-/* 3. LAYOUT & STRUCTURE
+ul,
+ol {
+  list-style-position: inside;
+}
+
+/* 5. LAYOUT & STRUCTURE
    The main building blocks of the page.
    ======================================== */
-/* Centered main content container */
-body > * {
+.container {
+  width: 90%;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem; /* 64px top/bottom, 24px left/right */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
   text-align: center;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  border-bottom: 1px solid var(--border-color); /* Add border to header */
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header nav ul,
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header nav li,
+footer nav li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
 header nav a {
-  margin: 0 15px;
   color: var(--secondary-text-color);
   font-weight: 400;
 }
 
-header nav a:hover {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-
-section {
+main > section {
+  padding: 3rem 0;
   border-bottom: 1px solid var(--border-color);
 }
-section:last-of-type {
+
+main > section:last-of-type {
   border-bottom: none;
 }
 
 footer {
-  background-color: var(--surface-color); /* White background for footer */
+  background-color: var(--surface-color);
   border-top: 1px solid var(--border-color);
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 3rem 0;
   color: var(--secondary-text-color);
   font-size: 0.9rem;
 }
 
-footer ul {
-  list-style-type: none;
-  padding: 0;
+footer .container ul {
   margin-bottom: 2rem;
 }
 
-footer ul li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-/* 4. COMPONENT STYLES
+/* 6. COMPONENT STYLES
    Styling for specific, reusable elements.
    ======================================== */
+.header-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
 .project-card {
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
-  border-radius: 8px; /* Slightly smaller radius for a sharper look */
-  padding: 2rem; /* 32px */
+  border-radius: 8px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); /* A very subtle shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
 }
 
 .project-card:hover {
-  transform: translateY(-5px); /* Lift the card on hover */
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07); /* A more pronounced shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07);
 }
 
 .project-card h3 {
@@ -153,35 +195,17 @@ footer ul li {
 }
 
 #skills ul {
-  list-style-type: "✓ ";
-  padding-left: 20px;
+  list-style-type: "✓  ";
+  padding-left: 0;
 }
-
-/* Add this new block inside section 4. COMPONENT STYLES */
-
-.header-image {
-  width: 250px; /* Set a fixed width */
-  height: 250px; /* Set a fixed height */
-  border-radius: 50%; /* This makes the image perfectly circular */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  border: 4px solid var(--accent-color); /* A border using our theme's accent color */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* A subtle shadow to make it pop */
-  margin-bottom: 20px; /* Add some space below the image */
-}
-
-/* Add this new block for the social media icons */
 
 .social-icon {
   width: 28px;
   height: 28px;
-  fill: var(
-    --secondary-text-color
-  ); /* Use the softer grey for the default icon color */
-  transition: fill 0.3s ease;
+  fill: var(--secondary-text-color);
+  transition: fill 0.2s ease-in-out;
 }
 
 footer a:hover .social-icon {
-  fill: var(
-    --accent-color
-  ); /* On hover, change the icon color to the main accent color */
+  fill: var(--accent-color);
 }
