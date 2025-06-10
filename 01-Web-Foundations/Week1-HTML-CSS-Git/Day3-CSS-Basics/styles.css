@@ -1,0 +1,187 @@
+/*
+========================================
+PORTFOLIO THEME V1.1 - "DAYLIGHT"
+Designer: Roy Natsir & The Mentor
+========================================
+*/
+
+/* 1. ROOT VARIABLES & GENERAL SETUP 
+   Changing these variables will change the entire theme.
+   ======================================== */
+:root {
+  --bg-color: #f8f9fa; /* A very light, almost white, grey background */
+  --surface-color: #ffffff; /* Pure white for cards and surfaces */
+  --primary-text-color: #212529; /* A strong, dark grey for primary text */
+  --secondary-text-color: #6c757d; /* A softer grey for secondary text */
+  --accent-color: #007bff; /* A classic, professional blue */
+  --accent-hover-color: #0056b3; /* A darker blue for hover effects */
+  --border-color: #dee2e6; /* A light, subtle border color */
+}
+
+/* Import the 'Inter' font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased; /* Smoother fonts on Webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+/* 2. TYPOGRAPHY
+   Clean, modern, and readable.
+   ======================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-text-color);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3rem; /* 48px */
+  color: #000000; /* Pure black for the main name for emphasis */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+p {
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover-color);
+}
+
+/* 3. LAYOUT & STRUCTURE
+   The main building blocks of the page.
+   ======================================== */
+/* Centered main content container */
+body > * {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem; /* 64px top/bottom, 24px left/right */
+}
+
+header {
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--border-color); /* Add border to header */
+}
+
+header nav a {
+  margin: 0 15px;
+  color: var(--secondary-text-color);
+  font-weight: 400;
+}
+
+header nav a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+section {
+  border-bottom: 1px solid var(--border-color);
+}
+section:last-of-type {
+  border-bottom: none;
+}
+
+footer {
+  background-color: var(--surface-color); /* White background for footer */
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+/* 4. COMPONENT STYLES
+   Styling for specific, reusable elements.
+   ======================================== */
+.project-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Slightly smaller radius for a sharper look */
+  padding: 2rem; /* 32px */
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); /* A very subtle shadow */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Lift the card on hover */
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07); /* A more pronounced shadow on hover */
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+#skills ul {
+  list-style-type: "✓ ";
+  padding-left: 20px;
+}
+
+/* Add this new block inside section 4. COMPONENT STYLES */
+
+.header-image {
+  width: 250px; /* Set a fixed width */
+  height: 250px; /* Set a fixed height */
+  border-radius: 50%; /* This makes the image perfectly circular */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 4px solid var(--accent-color); /* A border using our theme's accent color */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* A subtle shadow to make it pop */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+/* Add this new block for the social media icons */
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(
+    --secondary-text-color
+  ); /* Use the softer grey for the default icon color */
+  transition: fill 0.3s ease;
+}
+
+footer a:hover .social-icon {
+  fill: var(
+    --accent-color
+  ); /* On hover, change the icon color to the main accent color */
+}
