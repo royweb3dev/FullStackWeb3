@@ -2,6 +2,6 @@
 .env
 
 # Local automation and utility scripts
-commit_and_notify.sh
+push.sh
 daily_reminder.sh
 setup_bootcamp_robust.sh
