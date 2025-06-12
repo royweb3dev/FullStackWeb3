@@ -25,5 +25,4 @@ This week marked the beginning of my 12-month journey, transitioning from zero e
 
 ### **Plan for Next Week:**
 - Dive deep into **CSS Flexbox and Grid** to truly master layout.
-- Begin learning the fundamentals of **JavaScript**, moving from a static page to an interactive one
-.
+- Begin learning the fundamentals of **JavaScript**, moving from a static page to an interactive one.
