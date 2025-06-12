@@ -1,39 +1,55 @@
 #!/bin/bash
 #
-# A "smart" script to automate adding, committing, and pushing changes.
-# It can accept a commit message as an argument for speed, or prompt for one if none is given.
-# Example (auto message): ./push.sh "feat: add new component"
-# Example (interactive):  ./push.sh
+# A smart script with an AUTO-GENERATED commit message feature.
+# It uses the current directory name to create a descriptive commit message.
+# It provides a timeout to override with a custom message.
 #
 
-# --- Load Environment Variables ---
-CONFIG_FILE="commit_env.sh"
+# --- Load Environment Variables from .env file ---
+CONFIG_FILE=".env"
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "Error: Configuration file '$CONFIG_FILE' not found."
     exit 1
 fi
-source "$CONFIG_FILE"
+export $(grep -v '^#' "$CONFIG_FILE" | xargs)
 
-# --- Determine Commit Message ---
-COMMIT_MESSAGE="$1" # Get the first argument passed to the script
 
-if [ -z "$COMMIT_MESSAGE" ]; then
-  # If no message was passed as an argument, switch to interactive mode
-  echo "No commit message provided. Entering interactive mode..."
-  echo "Please enter your commit message:"
-  read INTERACTIVE_MESSAGE
-  
-  if [ -z "$INTERACTIVE_MESSAGE" ]; then
-    echo "No commit message entered. Aborting."
+# --- Auto-Generate Commit Message ---
+# Get the current directory name (e.g., Day7-Weekly-Review)
+CURRENT_DIR_NAME=${PWD##*/} 
+
+# Create a default commit message
+# Example: "docs(Day7): update progress and notes"
+AUTO_MESSAGE="docs(${CURRENT_DIR_NAME}): update progress and notes"
+
+
+# --- User Interaction with Timeout ---
+echo "-----------------------------------------------------"
+echo "AUTO COMMIT MESSAGE:"
+echo "$AUTO_MESSAGE"
+echo "-----------------------------------------------------"
+echo "Committing in 5 seconds. Press Ctrl+C to cancel and enter a custom message."
+
+# This `read` command will wait for 5 seconds for any input.
+# If the user presses Enter or does nothing, it continues.
+# If the user presses Ctrl+C, the script exits.
+read -t 5 -p "(Press Enter to use auto-message now, or wait...) "
+
+# The exit code ($?) will be > 128 if the timeout is reached.
+# We will treat timeout as an approval of the auto-message.
+if [ $? -ne 0 ] && [ $? -le 128 ]; then
+    echo
+    echo "Operation cancelled by user. Exiting."
     exit 1
-  fi
-  COMMIT_MESSAGE="$INTERACTIVE_MESSAGE"
 fi
 
+# If we reach here, it means the user either pressed Enter or waited 5 seconds.
+COMMIT_MESSAGE="$AUTO_MESSAGE"
+echo
+echo "Proceeding with auto-generated message."
+
+
 # --- Git Automation ---
-echo "-----------------------------------"
-echo "Commit Message: $COMMIT_MESSAGE"
-echo "-----------------------------------"
 echo "Staging all files..."
 git add .
 
@@ -43,21 +59,17 @@ git commit -m "$COMMIT_MESSAGE"
 echo "Pushing changes to GitHub..."
 git push origin main
 
+
 # --- Check for Success and Notify ---
 if [ $? -eq 0 ]; then
     echo "Push successful!"
     echo "Sending notification to Telegram..."
     
-    # URL encode the commit message to handle special characters
-    ENCODED_MESSAGE=$(printf '%s' "$COMMIT_MESSAGE" | jq -sRr @uri)
-    
-    # Format the Telegram message
     MESSAGE="✅ *Push Successful*%0A%0A"
-    MESSAGE+="*Repo:* [FullStackWeb3]($GITHUB_REPO_URL/tree/main)%0A"
+    MESSAGE+="*Repo:* [FullStackWeb3](https://github.com/royweb3dev/FullStackWeb3)%0A"
     MESSAGE+="*Commit:* \`$COMMIT_MESSAGE\`%0A"
     MESSAGE+="*Timestamp:* `date`"
     
-    # Use curl to send the message
     curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
         -d "chat_id=$TELEGRAM_CHAT_ID" \
         -d "text=$MESSAGE" \
