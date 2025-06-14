@@ -144,6 +144,8 @@ footer .container li {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   margin-bottom: 2rem;
   border: 1px solid var(--border-color);
@@ -152,11 +154,15 @@ footer .container li {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+.project-card > a {
+  margin-top: 1rem;
+}
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07);
 }
-.project-card h3 {
+.p.project-card > h3, .project-card > p {
+  flex-grow: 1;
   margin-top: 0;
   color: var(--accent-color);
 }
@@ -169,6 +175,80 @@ footer .container li {
 }
 footer a:hover .social-icon {
   fill: var(--accent-color);
+}
+
+/* --- NEW COMPONENT: Featured Article Layout --- */
+
+/* 
+  THE GRID'S JOB: Define the macro, 2-column layout.
+  The main content takes 3 fractional units of space, the sidebar takes 1.
+*/
+.article-layout {
+  display: grid;
+  /* Create a 3:1 ratio for the two columns */
+  grid-template-columns: 3fr 1fr; 
+  gap: 3rem; /* The space between the content and the sidebar */
+}
+
+/* .article-content ruleset removed as it was empty */
+
+.article-sidebar {
+  /* Basic styling for the sidebar card */
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  /* Ensures the sidebar doesn't shrink if content is small */
+  align-self: start; 
+}
+
+/* 
+  FLEXBOX'S JOB: Align the small meta items inside the main content.
+*/
+.article-meta {
+  display: flex; /* Use flexbox to align the metadata items */
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Find and modify the .article-sidebar h4 rule */
+.article-sidebar h4 {
+  font-size: 1.1rem;
+  color: var(--primary-text-color); /* Make it darker */
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+/* Find and modify the .article-sidebar li rule */
+.article-sidebar li {
+  margin-bottom: 0.75rem; /* Add a bit more space */
+}
+
+.article-sidebar .tech-list, 
+.article-sidebar .links-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.article-sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+/* Find the .article-sidebar rule and add the new properties */
+.article-sidebar {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  padding-left: 2rem; /* Add more left padding */
+  border-radius: 8px;
+  align-self: start;
+
+  /* NEW: Add a subtle accent to visually anchor the sidebar */
+  border-left: 4px solid var(--accent-color);
 }
 
 /* --- Skills Section Styles --- */
@@ -223,4 +303,21 @@ footer a:hover .social-icon {
 .skill-chip span {
   font-weight: 600;
   color: var(--primary-text-color);
+}
+
+/* --- NEW UTILITY CLASS --- */
+.cta-link {
+  display: inline-block; /* Allows us to apply padding */
+  background-color: var(--accent-color);
+  color: #ffffff; /* White text */
+  padding: 0.5rem 1rem; /* 8px top/bottom, 16px left/right */
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cta-link:hover {
+  background-color: var(--accent-hover-color);
+  color: #ffffff; /* Ensure text stays white on hover */
+  text-decoration: none; /* No underline on hover for buttons */
 }
