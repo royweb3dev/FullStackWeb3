@@ -1,0 +1,323 @@
+/*
+========================================
+PORTFOLIO THEME V2.0 - "DAYLIGHT" (Final Symmetry Fix)
+Designer: Roy Natsir
+Revised by: The Mentor
+========================================
+*/
+
+/* 1. CSS RESET & GLOBAL SETUP */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  font-family: "Inter", -apple-system, sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* 2. GOOGLE FONTS IMPORT - Handled in HTML */
+
+/* 3. CSS VARIABLES */
+:root {
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --primary-text-color: #212529;
+  --secondary-text-color: #6c757d;
+  --accent-color: #007bff;
+  --accent-hover-color: #0056b3;
+  --border-color: #dee2e6;
+}
+
+/* 4. GENERAL TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 3rem;
+  color: #000;
+}
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--accent-hover-color);
+}
+ul,
+ol {
+  list-style-position: inside;
+}
+
+/* 5. LAYOUT & STRUCTURE */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+header .container {
+  /* Turn this container into a flexbox context */
+  display: flex;
+  /* Stack items vertically */
+  flex-direction: column;
+  /* Center everything along the vertical axis (now the cross axis) */
+  align-items: center;
+}
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  /* Turn the list itself into a flexbox context */
+  display: flex;
+  /* Add some space between the navigation links */
+  gap: 1.5rem; /* 24px */
+}
+header nav a {
+  color: var(--secondary-text-color);
+  font-weight: 400;
+}
+main > section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+main > section:last-of-type {
+  border-bottom: none;
+}
+footer {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+footer .container ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+footer .container li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+/* 6. COMPONENT STYLES */
+.header-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.project-card > a {
+  margin-top: 1rem;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07);
+}
+.p.project-card > h3, .project-card > p {
+  flex-grow: 1;
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--secondary-text-color);
+  transition: fill 0.2s ease-in-out;
+}
+footer a:hover .social-icon {
+  fill: var(--accent-color);
+}
+
+/* --- NEW COMPONENT: Featured Article Layout --- */
+
+/* 
+  THE GRID'S JOB: Define the macro, 2-column layout.
+  The main content takes 3 fractional units of space, the sidebar takes 1.
+*/
+.article-layout {
+  display: grid;
+  /* Create a 3:1 ratio for the two columns */
+  grid-template-columns: 3fr 1fr; 
+  gap: 3rem; /* The space between the content and the sidebar */
+}
+
+/* .article-content ruleset removed as it was empty */
+
+.article-sidebar {
+  /* Basic styling for the sidebar card */
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  /* Ensures the sidebar doesn't shrink if content is small */
+  align-self: start; 
+}
+
+/* 
+  FLEXBOX'S JOB: Align the small meta items inside the main content.
+*/
+.article-meta {
+  display: flex; /* Use flexbox to align the metadata items */
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Find and modify the .article-sidebar h4 rule */
+.article-sidebar h4 {
+  font-size: 1.1rem;
+  color: var(--primary-text-color); /* Make it darker */
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+/* Find and modify the .article-sidebar li rule */
+.article-sidebar li {
+  margin-bottom: 0.75rem; /* Add a bit more space */
+}
+
+.article-sidebar .tech-list, 
+.article-sidebar .links-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.article-sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+/* Find the .article-sidebar rule and add the new properties */
+.article-sidebar {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  padding-left: 2rem; /* Add more left padding */
+  border-radius: 8px;
+  align-self: start;
+
+  /* NEW: Add a subtle accent to visually anchor the sidebar */
+  border-left: 4px solid var(--accent-color);
+}
+
+/* --- Skills Section Styles --- */
+
+.skills-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.skill-category h3 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+.skill-category ul {
+  list-style-type: none;
+  padding-left: 0;
+  flex-grow: 1;
+}
+.skill-chip {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.skill-chip:hover {
+  border-color: var(--accent-color);
+  background-color: #fff;
+}
+.skill-chip .skill-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  fill: var(--icon-brand-color, var(--secondary-text-color));
+}
+.skill-chip span {
+  font-weight: 600;
+  color: var(--primary-text-color);
+}
+
+/* --- NEW UTILITY CLASS --- */
+.cta-link {
+  display: inline-block; /* Allows us to apply padding */
+  background-color: var(--accent-color);
+  color: #ffffff; /* White text */
+  padding: 0.5rem 1rem; /* 8px top/bottom, 16px left/right */
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cta-link:hover {
+  background-color: var(--accent-hover-color);
+  color: #ffffff; /* Ensure text stays white on hover */
+  text-decoration: none; /* No underline on hover for buttons */
+}
