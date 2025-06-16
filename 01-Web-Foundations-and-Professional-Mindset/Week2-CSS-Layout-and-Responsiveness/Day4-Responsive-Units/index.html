@@ -25,22 +25,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
+    <header class="hero-section">
+      <div class="hero-content">
         <img
           src="https://static.alchemyapi.io/images/chain-artworks/ETH.jpg"
           alt="Ethereum Artwork Logo"
           class="header-image"
         />
-        <h1>Roy Natsir</h1>
-        <p>Full Stack Web3 Developer</p>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <h1 class="hero-title">Roy Natsir</h1>
+        <p class="hero-subtitle">A Full Stack Web3 Engineer in the Making</p>
+        <nav class="hero-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -333,40 +331,49 @@
         </div>
       </section>
       <section id="featured-article">
-  <div class="container">
-    <h2>From the Lab: Project Deep Dive</h2>
+        <div class="container">
+          <h2>From the Lab: Project Deep Dive</h2>
 
-    <div class="article-layout">
-      <!-- Main Content Column -->
-      <article class="article-content">
-        <h3>Deconstructing Project Odyssey</h3>
-        <div class="article-meta">
-          <span>Published: June 13, 2025</span>
-          <span>Reading Time: 5 mins</span>
+          <div class="article-layout">
+            <!-- Main Content Column -->
+            <article class="article-content">
+              <h3>Deconstructing Project Odyssey</h3>
+              <div class="article-meta">
+                <span>Published: June 13, 2025</span>
+                <span>Reading Time: 5 mins</span>
+              </div>
+              <p>
+                Project Odyssey represents the culmination of a year-long
+                journey into the depths of multichain architecture. The core
+                challenge was not just building on EVM and Solana, but creating
+                a seamless, unified governance experience...
+              </p>
+              <p>
+                The interoperability layer, powered by LayerZero, acts as the
+                central nervous system, translating votes and states between
+                fundamentally different blockchain paradigms...
+              </p>
+              <a href="#" class="cta-link">Continue Reading →</a>
+            </article>
+
+            <!-- Sidebar Column -->
+            <aside class="article-sidebar">
+              <h4>Tech Stack</h4>
+              <ul class="tech-list">
+                <li>Solidity</li>
+                <li>Rust (Anchor)</li>
+                <li>Next.js</li>
+                <li>LayerZero</li>
+              </ul>
+              <h4>Related Links</h4>
+              <ul class="links-list">
+                <li><a href="#">View on GitHub</a></li>
+                <li><a href="#">Read the TDD</a></li>
+              </ul>
+            </aside>
+          </div>
         </div>
-        <p>Project Odyssey represents the culmination of a year-long journey into the depths of multichain architecture. The core challenge was not just building on EVM and Solana, but creating a seamless, unified governance experience...</p>
-        <p>The interoperability layer, powered by LayerZero, acts as the central nervous system, translating votes and states between fundamentally different blockchain paradigms...</p>
-        <a href="#" class="cta-link">Continue Reading →</a>
-      </article>
-      
-      <!-- Sidebar Column -->
-      <aside class="article-sidebar">
-        <h4>Tech Stack</h4>
-        <ul class="tech-list">
-          <li>Solidity</li>
-          <li>Rust (Anchor)</li>
-          <li>Next.js</li>
-          <li>LayerZero</li>
-        </ul>
-        <h4>Related Links</h4>
-        <ul class="links-list">
-          <li><a href="#">View on GitHub</a></li>
-          <li><a href="#">Read the TDD</a></li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</section>
+      </section>
     </main>
 
     <footer id="contact">
