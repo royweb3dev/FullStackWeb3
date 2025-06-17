@@ -3,3 +3,4 @@
 
 # Local automation and utility scripts
 push.sh
+node_modules
