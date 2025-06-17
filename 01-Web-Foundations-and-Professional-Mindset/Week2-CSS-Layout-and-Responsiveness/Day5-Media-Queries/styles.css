@@ -11,13 +11,15 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 body {
+  overflow-x: hidden;
   background-color: var(--bg-color);
   color: var(--primary-text-color);
   font-family: "Inter", -apple-system, sans-serif;
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 /* 2. CSS VARIABLES */
@@ -102,7 +104,7 @@ footer .container li {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 50vh;
   background-color: var(--bg-color);
   padding: clamp(1.5rem, 4vw, 3rem) 1rem;
   text-align: center;
