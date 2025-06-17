@@ -1,10 +1,5 @@
-/*
-========================================
-PORTFOLIO THEME V2.1 - "DAYLIGHT" (Definitive Layout Fix)
-========================================
-*/
-
 /* 1. CSS RESET & GLOBAL SETUP */
+
 *,
 *::before,
 *::after {
@@ -137,8 +132,8 @@ footer .container li {
 }
 
 .header-image {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent-color);
@@ -244,6 +239,7 @@ footer a:hover .social-icon {
 @media (min-width: 768px) {
   .article-layout {
     grid-template-columns: 3fr 1fr;
+    gap: 3rem; /* Increase gap for desktop */
   }
 }
 
