@@ -156,6 +156,8 @@ footer .container li {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+  transform: scale(1.05) translateY(-6px) rotate(-0.3deg);
+
 }
 .project-card h3 {
   margin-top: 0;
@@ -168,10 +170,13 @@ footer .container li {
   height: 28px;
   fill: var(--secondary-text-color);
   transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: scale(1.05) translateY(-6px) rotate(-0.3deg);
+
 }
 footer a:hover .social-icon {
   fill: var(--accent-color);
   transform: scale(1.2);
+  
 }
 
 /* --- Skills Section --- */
@@ -215,6 +220,7 @@ footer a:hover .social-icon {
   border-radius: 6px;
   border: 1px solid transparent;
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transform: scale(1.05) translateY(-6px) rotate(-0.3deg);
 }
 .skill-chip:hover {
   border-color: var(--accent-color);
@@ -394,6 +400,8 @@ with the code below.
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  transform: scale(1.05) translateY(-6px) rotate(-0.3deg);
+
 }
 
 .featured-badge {
@@ -522,4 +530,24 @@ with the code below.
   width: 32px;
   height: 32px;
   fill: currentColor;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
