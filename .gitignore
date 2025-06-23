@@ -1,6 +1,32 @@
-# Local environment variables
+# Environment variables - NEVER commit secrets
 .env
+.env.*
+!.env.example
 
-# Local automation and utility scripts
-push.sh
-node_modules
+# Node.js dependencies
+/node_modules
+
+# Build output & compiled files
+/dist
+/build
+/.next/
+*.o
+*.pyc
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor specific
+.vscode/
+*.swp
+*~
+
+# Log files
+npm-debug.log*
+yarn-error.log
+debug.log
+
+# Temporary script files
+restructure_*.sh
+fix_*.sh
