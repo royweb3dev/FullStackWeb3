@@ -1,1 +1,1 @@
-# Month 03: 03 Modern Frontend Architecture
+# 03 Modern Frontend Architecture

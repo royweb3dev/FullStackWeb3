@@ -1,1 +1,1 @@
-# Month 11: 11 Advanced Engineering and Capstone Prep
+# 11 Professional dApp UX

@@ -1,1 +1,1 @@
-# Month 07: 07 Solana Foundations Rust and Anchor
+# 07 Cosmos SDK and App Chain Development
