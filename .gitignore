@@ -30,3 +30,6 @@ debug.log
 # Temporary script files
 restructure_*.sh
 fix_*.sh
+restructure_final.sh
+fix_git_strategy.sh
+push.sh
