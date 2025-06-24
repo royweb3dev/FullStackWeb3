@@ -1,0 +1,118 @@
+/*styles.css */
+
+/* 
+  Using a CSS Custom Property (variable) for our accent color.
+  This makes it easy to change the entire site's theme in one line.
+*/
+
+:root {
+  --background-primary: #ffffff;
+  --background-content: #f7f7f7;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --accent-color: #007BFF;
+  --border-color: #eeeeee;
+}
+
+/* Step 1: Define base styles for the entire page */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--background-primary); ;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Step 2: Set up a main container for consistent width and centering */
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 0px;
+}
+
+/* Step 3: Style the header and footer sections */
+
+header, footer {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
+  font-weight: 700;
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+header nav ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 20 px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+}
+
+header nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+header nav a {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Style all links */
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Step 4: Apply the Box Model to the main content sections */
+
+main section {
+  background-color: var(--background-content);
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+/* Style the section titles */
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 1.4em;
+  color: var(--text-secondary);
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
