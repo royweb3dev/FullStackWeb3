@@ -1,24 +1,24 @@
-/*styles.css */
+/* styles.css - Professional Light Mode Palette */
 
 /* 
-  Using a CSS Custom Property (variable) for our accent color.
-  This makes it easy to change the entire site's theme in one line.
+  Define our color palette using CSS Custom Properties (variables).
+  This makes theme changes extremely easy.
 */
-
 :root {
   --background-primary: #ffffff;
   --background-content: #f7f7f7;
   --text-primary: #111111;
   --text-secondary: #555555;
-  --accent-color: #007BFF;
+  --accent-color: #007bff;
   --border-color: #eeeeee;
 }
 
 /* Step 1: Define base styles for the entire page */
-
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-color: var(--background-primary); ;
+  /* A modern, system-agnostic font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--background-primary);
   color: var(--text-primary);
   line-height: 1.7;
   margin: 0;
@@ -26,25 +26,24 @@ body {
 }
 
 /* Step 2: Set up a main container for consistent width and centering */
-
 .container {
-  width: 90%;
+  width: 90%; /* Use more screen real estate */
   max-width: 960px;
-  margin: 0 auto;
-  padding: 40px 0px;
+  margin: 0 auto; /* Center the block element */
+  padding: 40px 0;
 }
 
 /* Step 3: Style the header and footer sections */
-
-header, footer {
+header,
+footer {
   text-align: center;
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 header h1 {
   margin: 0;
   font-size: 2.8em;
-  font-weight: 700;
+  font-weight: 700; /* Bold */
 }
 
 header p {
@@ -53,10 +52,11 @@ header p {
   margin-top: 5px;
 }
 
+/* Style the navigation list and links */
 header nav ul {
   padding: 0;
   list-style: none;
-  margin-top: 20 px;
+  margin-top: 30px;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   padding: 15px 0;
@@ -68,16 +68,15 @@ header nav li {
 }
 
 header nav a {
-  font-weight: 600;
+  font-weight: 600; /* Slightly bolder font for nav links */
   font-size: 1.1em;
 }
 
 /* Style all links */
-
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 a:hover {
@@ -85,13 +84,19 @@ a:hover {
 }
 
 /* Step 4: Apply the Box Model to the main content sections */
-
 main section {
+  text-align: center;
   background-color: var(--background-content);
   padding: 30px;
   margin-bottom: 40px;
   border: 1px solid var(--border-color);
-  border-radius: 5px;
+  border-radius: 5px; /* A more subtle corner radius */
+}
+main section p,
+main section ul {
+  text-align: left;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 /* Style the section titles */
@@ -115,4 +120,37 @@ footer ul {
 footer li {
   display: inline-block;
   margin: 0 10px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; 
+  text-align: left;
+  margin-top: 30px;
+}
+
+.skill-category {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  border-bottom: none;
+  font-size: 1.2em;
+}
+
+.skill-category ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
