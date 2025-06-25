@@ -27,9 +27,9 @@ body {
 
 /* Step 2: Set up a main container for consistent width and centering */
 .container {
-  width: 90%; /* Use more screen real estate */
+  width: 90%; 
   max-width: 960px;
-  margin: 0 auto; /* Center the block element */
+  margin: 0 auto; 
   padding: 40px 0;
 }
 
@@ -43,7 +43,7 @@ footer {
 header h1 {
   margin: 0;
   font-size: 2.8em;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
 }
 
 header p {
@@ -92,12 +92,6 @@ main section {
   border: 1px solid var(--border-color);
   border-radius: 5px; /* A more subtle corner radius */
 }
-main section p,
-main section ul {
-  text-align: left;
-  display: inline-block;
-  margin-top: 10px;
-}
 
 /* Style the section titles */
 h2 {
@@ -123,16 +117,15 @@ footer li {
 }
 
 .skills-grid {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px; 
+  gap: 30px;
   text-align: left;
   margin-top: 30px;
 }
 
 .skill-category {
-  background-color: #ffffff;
-  padding: 20px;
+  background-color: #ffffff; 
   border: 1px solid var(--border-color);
   border-radius: 5px;
 }
@@ -140,12 +133,12 @@ footer li {
 .skill-category h3 {
   margin-top: 0;
   color: var(--accent-color);
-  border-bottom: none;
+  border-bottom: none; 
   font-size: 1.2em;
 }
 
 .skill-category ul {
-  padding-left: 20px;
+  padding-left: 20px; 
   margin-bottom: 0;
 }
 
@@ -153,4 +146,40 @@ footer li {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.skill-category {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0.5);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+.skill-category ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  list-style-type: square;
+}
+
+.skill-category li {
+  margin-bottom: 10px;
+}
+
+.skill-category li:last-child {
+  margin-bottom: 0;
 }
