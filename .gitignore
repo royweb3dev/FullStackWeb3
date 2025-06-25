@@ -1,31 +1,30 @@
-# Environment variables - NEVER commit secrets
-.env
-.env.*
-!.env.example
+# Node
+node_modules/
+dist/
 
-# Node.js dependencies
-/node_modules
-
-# Build output & compiled files
-/dist
-/build
-/.next/
-*.o
-*.pyc
-
-# OS-generated files
-.DS_Store
-Thumbs.db
-
-# IDE / Editor specific
+# IDE & OS
 .vscode/
-*.swp
+.idea/
+.DS_Store
 *~
 
-# Log files
-npm-debug.log*
-yarn-error.log
-debug.log
+# Logs & Environment
+*.log
+.env
+.env.local
+
+# Web3 Build Tools
+cache/
+artifacts/
+out/
+forge-artifacts/
+coverage/
+*.tsbuildinfo
+
+# Frameworks
+.next/
+.svelte-kit/
+.vercel/
 
 # Temporary script files
 push.sh
