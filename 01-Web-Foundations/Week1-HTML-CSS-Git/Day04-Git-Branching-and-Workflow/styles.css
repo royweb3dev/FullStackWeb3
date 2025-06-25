@@ -1,0 +1,185 @@
+/* styles.css - Professional Light Mode Palette */
+
+/* 
+  Define our color palette using CSS Custom Properties (variables).
+  This makes theme changes extremely easy.
+*/
+:root {
+  --background-primary: #ffffff;
+  --background-content: #f7f7f7;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --accent-color: #007bff;
+  --border-color: #eeeeee;
+}
+
+/* Step 1: Define base styles for the entire page */
+body {
+  /* A modern, system-agnostic font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Step 2: Set up a main container for consistent width and centering */
+.container {
+  width: 90%; 
+  max-width: 960px;
+  margin: 0 auto; 
+  padding: 40px 0;
+}
+
+/* Step 3: Style the header and footer sections */
+header,
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
+  font-weight: 700; 
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+/* Style the navigation list and links */
+header nav ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+}
+
+header nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+header nav a {
+  font-weight: 600; /* Slightly bolder font for nav links */
+  font-size: 1.1em;
+}
+
+/* Style all links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Step 4: Apply the Box Model to the main content sections */
+main section {
+  text-align: center;
+  background-color: var(--background-content);
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px; /* A more subtle corner radius */
+}
+
+/* Style the section titles */
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 1.4em;
+  color: var(--text-secondary);
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.skills-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.skill-category {
+  background-color: #ffffff; 
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  border-bottom: none; 
+  font-size: 1.2em;
+}
+
+.skill-category ul {
+  padding-left: 20px; 
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-category {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0.5);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+.skill-category ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  list-style-type: square;
+}
+
+.skill-category li {
+  margin-bottom: 10px;
+}
+
+.skill-category li:last-child {
+  margin-bottom: 0;
+}
