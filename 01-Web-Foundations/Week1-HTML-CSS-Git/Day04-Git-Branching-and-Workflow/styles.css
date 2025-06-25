@@ -183,3 +183,10 @@ footer li {
 .skill-category li:last-child {
   margin-bottom: 0;
 }
+
+header small {
+  display: block;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-style: italic;
+}
