@@ -175,3 +175,63 @@ header small {
 .projects-heading {
   margin-top: 60px;
 }
+
+.projects-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.project-card {
+  flex: 1 1 48%;
+  background-color: var(--background-content);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0.5);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.project-card p,
+.project-card a {
+  margin-top: 10px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.3em;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px){
+  .project-card {
+    flex: 1 1 100%;
+}
+}
+
+.project-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 980px;
+  margin: 20px auto 40px auto;
+  font-style: italic;
+}
