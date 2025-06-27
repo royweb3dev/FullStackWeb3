@@ -1,9 +1,14 @@
 /* styles.css - Professional Light Mode Palette */
+html {
+  box-sizing: border-box;
+}
 
-/* 
-  Define our color palette using CSS Custom Properties (variables).
-  This makes theme changes extremely easy.
-*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 :root {
   --background-primary: #ffffff;
   --background-content: #f7f7f7;
@@ -15,7 +20,6 @@
 
 /* Step 1: Define base styles for the entire page */
 body {
-  /* A modern, system-agnostic font stack */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--background-primary);
@@ -117,17 +121,20 @@ footer li {
 }
 
 .skills-grid {
-  display: inline-grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
-  text-align: left;
   margin-top: 30px;
 }
 
 .skill-category {
+  flex: 1 1 45%;
   background-color: #ffffff; 
   border: 1px solid var(--border-color);
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .skill-category h3 {
@@ -140,12 +147,6 @@ footer li {
 .skill-category ul {
   padding-left: 20px; 
   margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .skill-category {
