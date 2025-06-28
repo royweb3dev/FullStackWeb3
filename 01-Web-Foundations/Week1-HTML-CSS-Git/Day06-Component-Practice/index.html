@@ -1,31 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component Practice: Profile Card</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The professional portfolio of Roy Natsir, a Full Stack Web3 Developer in training."
+    />
+    <link rel="canonical" href="https://royweb3.dev/" />
+    <title>Roy Natsir - Component Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- The main container for the gallery layout -->
+    <main class="card-gallery-container">
+      <!-- Card 1: The Architect -->
+      <article class="profile-card">
+        <header class="card-header">
+         <img 
+         src="https://api.dicebear.com/8.x/shapes/svg?seed=architect" 
+         alt="Abstract icon for The Architect" 
+         class="profile-image"/>
+          <h2 class="profile-name">The Architect</h2>
+          <p class="profile-role">Systems & Protocol Design</p>
+        </header>
+        <section class="card-body">
+          <p>
+            Designing robust, secure, and scalable multichain systems. Focusing
+            on protocol-level decisions, tokenomics, and long-term ecosystem
+            health.
+          </p>
+        </section>
+        <footer class="card-footer">
+  <a href="#projects" class="cta-button">View Projects</a>
+</footer>
+      </article>
 
-  <article class="profile-card">
-    <header class="card-header">
-        <img src="https://i.pravatar.cc/150?u=roy" alt="Profile picture of Roy Natsir" class="profile-image">
-        <h2 class="profile-name">Roy Natsir</h2>
-        <p class="profile-role">Aspiring Web3 Architect</p>
-    </header>
+      <!-- Card 2: The Engineer -->
+      <article class="profile-card">
+        <header class="card-header">
+          <img
+        src="https://api.dicebear.com/8.x/shapes/svg?seed=engineer"
+        alt="Abstract icon for The Engineer"
+        class="profile-image"/>
+          <h2 class="profile-name">The Engineer</h2>
+          <p class="profile-role">On-Chain & Backend Implementation</p>
+        </header>
+        <section class="card-body">
+          <p>
+            Writing clean, efficient, and rigorously tested code. Specializing
+            in Solidity/Foundry for EVM and Go for the Cosmos SDK.
+          </p>
+        </section>
+        <footer class="card-footer">
+  <a href="https://github.com/royweb3dev" target="_blank" class="cta-button">View Code</a>
+</footer>
+      </article>
 
-    <section class="card-body">
-      <p>On a 12-month mission to master the full Web3 stack, from decentralized frontends to multi-chain smart contracts.</p>
-    </section>
-
-    <footer class="card-footer">
-      <ul class="social-links">
-        <li><a href="https://github.com/royweb3dev" target="_blank">GitHub</a></li>
-        <li><a href="https://x.com/Roy_Natsir" target="_blank">X</a></li>
-      </ul>
-    </footer>
-  </article>
-
+      <!-- Card 3: The UX Advocate -->
+      <article class="profile-card">
+        <header class="card-header">
+         <img
+        src="https://api.dicebear.com/8.x/shapes/svg?seed=ux"
+        alt="Abstract icon for The UX Advocate"
+        class="profile-image"/>
+          <h2 class="profile-name">The UX Advocate</h2>
+          <p class="profile-role">Frontend & User Interaction</p>
+        </header>
+        <section class="card-body">
+          <p>
+            Building intuitive, accessible, and responsive user interfaces that
+            abstract away blockchain complexity for a seamless user experience.
+          </p>
+        </section>
+        <footer class="card-footer">
+  <a href="#" class="cta-button">View Demos</a>
+</footer>
+      </article>
+    </main>
   </body>
 </html>
