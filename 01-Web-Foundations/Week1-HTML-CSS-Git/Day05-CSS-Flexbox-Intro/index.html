@@ -27,27 +27,28 @@
       </header>
 
       <main role="main">
-        <section id="about">
-          <h2>About Me</h2>
-          <p>
-              Welcome to my living portfolio. 
-              I am on a 12-month intensive journey,
-              documented in real-time, to become a professional Full Stack Web3
-              Developer. My mission is to build secure, efficient, and user-friendly
-              decentralized applications that operate across multiple blockchain
-              ecosystems.
-              This page itself is my very first project, starting as a simple HTML document and evolving into a full-fledged dApp as my skills grow.
-              I believe in learning by building. Every commit in this portfolio reflects
-              real growth, real problems solved, and my evolving understanding of
-              decentralized technologies.
-            </p>
-        <section id="philosophy">
-          <h2>My Philosophy</h2>
-          <p>
-            I believe in a "learn by building" approach. Theory is essential, but true mastery comes from applying concepts to solve real-world problems. This portfolio is the first testament to that philosophy.
-          </p>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Welcome to my living portfolio. 
+    I am on a 12-month intensive journey,
+    documented in real-time, to become a professional Full Stack Web3
+    Developer. My mission is to build secure, efficient, and user-friendly
+    decentralized applications that operate across multiple blockchain
+    ecosystems.
+    This page itself is my very first project, starting as a simple HTML document and evolving into a full-fledged dApp as my skills grow.
+    I believe in learning by building. Every commit in this portfolio reflects
+    real growth, real problems solved, and my evolving understanding of
+    decentralized technologies.
+  </p>
+</section>
 
-        </section>
+<section id="philosophy">
+  <h2>My Philosophy</h2>
+  <p>
+    I believe in a "learn by building" approach. Theory is essential, but true mastery comes from applying concepts to solve real-world problems. This portfolio is the first testament to that philosophy.
+  </p>
+</section>
 
         <section id="skills">
           <h2>Core Competencies</h2>
@@ -92,24 +93,42 @@
           </div>
         </section>
 
-            <h2 class="section-title projects-heading" >Showcase Projects</h2>
-              <p class="project-intro">
-                These projects are a testament to my learning journey, showcasing my skills in real-world applications.
-              </p>
-            
-        <div class="projects-section"></div>
-        <article class="project-card">
-        <h3>Project Odyssey: Cross-Chain Governance DAO</h3>
-        <p>Status: In Planning (Target: Month 12)</p>
-        <a href="#">View Details (Link coming soon)</a>
-      </article>
+            <section id="projects">
+  <h2>Showcase Projects</h2>
+  <p>These projects are a testament to my learning journey, showcasing my skills in real-world applications.</p>
 
-      <article class="project-card">
-      <h3>Project Equinox: App-Chain CLI</h3>
-      <p>Status: Not Started (Target: Month 7)</p>
-      <a href="#">View Details (Link coming soon)</a>
+  <!-- This new div is now the Flex Container -->
+  <div class="projects-grid">
+    <article class="project-card">
+      <div class="card-body">
+        <h3>Project Odyssey: Cross-Chain Governance DAO</h3>
+<p class="status">Status: In Planning (Target: Month 12)</p>
+        <p>
+          A decentralized governance platform allowing proposals on an EVM chain
+          to be voted on a custom-built, low-cost Cosmos-SDK chain, with results
+          relayed back securely. This will be my capstone project.
+        </p>
+      </div>
+      <footer class="card-footer">
+        <a href="#">View Details</a>
+      </footer>
+    </article>
+
+    <article class="project-card">
+      <div class="card-body">
+        <h3>Project Equinox: App-Chain CLI</h3>
+<p class="status">Status: Not Started (Target: Month 7)</p>
+        <p>
+          A command-line interface tool to interact with a custom-built Cosmos-SDK
+          blockchain, allowing for proposal creation and voting directly from the terminal.
+        </p>
+      </div>
+      <footer class="card-footer">
+        <a href="#">View Details</a>
+      </footer>
     </article>
   </div>
+</section>
 </main>
 
       <footer role="contentinfo" id="contact">

@@ -58,16 +58,15 @@ header p {
 
 /* Style the navigation list and links */
 
-header nav {
-  padding: 0;
+header nav ul {
   list-style: none;
-  margin-top: 30px;
+  padding: 15px 0;
+  margin: 30px 0 0 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  padding: 15px 0;
+  
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 40px;
 }
 
@@ -77,6 +76,7 @@ header nav a {
 }
 
 /* Style all links */
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -88,13 +88,17 @@ a:hover {
 }
 
 /* Step 4: Apply the Box Model to the main content sections */
-main section p {
-  text-align: left;
+
+main > section {
   background-color: var(--background-content);
-  padding: 30px;
-  margin-bottom: 40px;
   border: 1px solid var(--border-color);
-  border-radius: 5px; /* A more subtle corner radius */
+  border-radius: 8px;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+}
+
+main > section p {
+  text-align: justify;
 }
 
 /* Style the section titles */
@@ -176,30 +180,29 @@ header small {
   margin-top: 60px;
 }
 
-.projects-section {
+.projects-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  margin-top: 30px;
+  gap: 30px;
 }
 
 .project-card {
-  flex: 1 1 48%;
-  background-color: var(--background-content);
-  padding: 20px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0.5);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.project-card {
-  flex: 1 1 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: space-between; 
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+.project-card .card-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .project-card p,
@@ -216,6 +219,8 @@ header small {
   margin-top: 0;
   color: var(--accent-color);
   font-size: 1.3em;
+  min-height: 3.5em;
+  margin-bottom: 12px;
 }
 
 .project-card p {
@@ -234,4 +239,26 @@ header small {
   max-width: 980px;
   margin: 20px auto 40px auto;
   font-style: italic;
+  margin-bottom: 20px;
+}
+
+.project-card .card-body p {
+  text-align: justify;
+}
+
+.project-card .status {
+  display: inline-block; 
+  background-color: var(--background-content);
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.project-card .card-body p:not(.status) {
+  margin-top: 0;
+  margin-bottom: 20px;
 }
