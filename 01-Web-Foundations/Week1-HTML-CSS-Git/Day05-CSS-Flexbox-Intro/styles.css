@@ -1,4 +1,4 @@
-/* styles.css - Professional Light Mode Palette */
+/* styles.css - Light Mode Palette */
 html {
   box-sizing: border-box;
 }
@@ -20,8 +20,8 @@ html {
 
 /* Step 1: Define base styles for the entire page */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--background-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -31,9 +31,9 @@ body {
 
 /* Step 2: Set up a main container for consistent width and centering */
 .container {
-  width: 90%; 
+  width: 90%;
   max-width: 960px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 40px 0;
 }
 
@@ -47,7 +47,7 @@ footer {
 header h1 {
   margin: 0;
   font-size: 2.8em;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 header p {
@@ -64,7 +64,7 @@ header nav ul {
   margin: 30px 0 0 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  
+
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -102,6 +102,7 @@ main > section p {
 }
 
 /* Style the section titles */
+
 h2 {
   font-size: 2em;
   margin-top: 0;
@@ -132,7 +133,6 @@ footer li {
   margin-top: 30px;
 }
 
-/* Each of the four category cards */
 .skill-category-pro {
   background-color: #ffffff;
   border: 1px solid var(--border-color);
@@ -150,14 +150,12 @@ footer li {
   text-align: left;
 }
 
-/* The list holding the skill pills */
 .skill-category-pro ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Each individual skill pill */
 .skill-category-pro li {
   display: flex;
   align-items: center;
@@ -181,13 +179,15 @@ footer li {
 }
 
 /* The SVG icon inside the pill */
+
 .skill-icon {
   width: 22px;
   height: 22px;
-  flex-shrink: 0; /* Prevents icon from shrinking */
+  flex-shrink: 0;
 }
 
 /* Responsive adjustments */
+
 @media (max-width: 768px) {
   .skills-grid-pro {
     grid-template-columns: 1fr;
@@ -214,7 +214,7 @@ header small {
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-between;
   flex: 1 1 45%;
   background-color: #ffffff;
   border: 1px solid var(--border-color);
@@ -252,10 +252,10 @@ header small {
   color: var(--text-secondary);
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .project-card {
     flex: 1 1 100%;
-}
+  }
 }
 
 .project-intro {
@@ -272,7 +272,7 @@ header small {
 }
 
 .project-card .status {
-  display: inline-block; 
+  display: inline-block;
   background-color: var(--background-content);
   padding: 5px 12px;
   border-radius: 12px;
@@ -288,47 +288,42 @@ header small {
   margin-bottom: 20px;
 }
 
-/*
-  ================================
-  SVG Icon Integration Styles
-  ================================
-*/
-
 /* --- Styles for Skills Section --- */
 
-/* Turn each list item into a flex container to align icon and text */
 .skill-category li {
   display: flex;
-  align-items: center; /* Vertically aligns icon and text */
-  gap: 12px;           /* Space between icon and text */
+  align-items: center;
+  gap: 12px;
 }
 
 /* Style for the skill icons */
+
 .skill-icon {
   width: 20px;
   height: 20px;
   color: var(--accent-color);
-  flex-shrink: 0; /* Prevents the icon from shrinking */
+  flex-shrink: 0;
 }
-
 
 /* --- Styles for Footer Social Icons --- */
 
-/* Turn the social link list into a flex container */
 footer .social-links {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 /* Style for the social media icons */
+
 .social-icon {
   width: 28px;
   height: 28px;
   fill: var(--text-secondary);
-  transition: fill 0.2s ease;
+  transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .social-icon:hover {
   fill: var(--text-primary);
+  transform: translateY(-3px);
 }
