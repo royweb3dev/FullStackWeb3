@@ -96,3 +96,8 @@ body {
   text-decoration: none;
   transform: translateY(-2px);
 }
+
+.cta-button svg {
+  margin-right: 8px;
+  vertical-align: middle;
+}
